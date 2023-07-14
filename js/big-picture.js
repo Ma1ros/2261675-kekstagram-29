@@ -5,7 +5,7 @@ const commentCountElement = bigPictureElement.querySelector('.social__comment-co
 const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentsLoaderElement = bigPictureElement.querySelector('.comments-loader');
 const bodyElement = document.querySelector('body');
-const cancelButtonElement = bigPictureElement.querySelector('.big-picture__cansel');
+const cancelButtonElement = bigPictureElement.querySelector('.big-picture__cancel');
 const commentElement = document.querySelector('#comment').content.querySelector('');
 const commentShownCountElement = bigPictureElement.querySelector('.comments-shown');
 
