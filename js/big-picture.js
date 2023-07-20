@@ -88,4 +88,4 @@ const showBigPicture = (data) => {
 cancelButtonElement.addEventListener('click', onCancelButtonClick);
 commentsLoaderElement.addEventListener('click', onCommentsLoaderClick);
 
-export {showBigPicture };
+export {showBigPicture, onDocumentKeydown };
