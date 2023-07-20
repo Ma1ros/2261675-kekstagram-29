@@ -1,3 +1,5 @@
+import { onDocumentKeydown } from './big-picture.js';
+
 const MAX_HASHTAG_COUNT = 5;
 const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
 
@@ -79,4 +81,5 @@ pristine.addValidator (
   photoHashtags,
   validHashtag
 );
+
 
