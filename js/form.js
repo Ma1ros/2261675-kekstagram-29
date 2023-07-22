@@ -27,18 +27,17 @@ const closeForm = () => {
   document.body.classList.remove('modal-open');
   window.removeEventListener('keydown', onDocumentKeydown);
   pristine.reset();
+  imgUploadForm.reset();
 };
 
-// // const isTextFieldFocused = () =>
-// //   document.activeElement === photoHashtags ||
-// //   document.activeElement === photoDescription;
-
-// // function onDocumentKeydown(evt) {
-// //   if(evt.key === 'Escape' && !isTextFieldFocused()){
-// //     evt.preventDefault();
-// //     hideModal();
-// //   }
+imgUploadInput.addEventListener('change', ()=> {
+  openForm();
+});
+// function onCloseButton () {
+//   closeForm();
 // }
+
+
 photoHashtags.addEventListener('keydown', (evt) => {
   if(evt.key === 'Escape'){
     evt.stopPropagation();
@@ -62,7 +61,8 @@ const validTextHashtag = (textHashtag) => normilize(textHashtag).every((tag) => 
 
 pristine.addValidator(
   photoHashtags,
-  validTextHashtag
+  validTextHashtag,
+  'Хештег не соответствует требованиям'
 );
 
 const uniqueHashtag = (textHashtag) => {
@@ -72,14 +72,16 @@ const uniqueHashtag = (textHashtag) => {
 
 pristine.addValidator (
   photoHashtags,
-  uniqueHashtag
+  uniqueHashtag,
+  'Хештеги должны быть уникальными'
 );
 
 const validHashtag = (textHashtag) => normilize(textHashtag).length <= MAX_HASHTAG_COUNT;
 
 pristine.addValidator (
   photoHashtags,
-  validHashtag
+  validHashtag,
+  'Максимальное число хэштегов 5'
 );
 
 

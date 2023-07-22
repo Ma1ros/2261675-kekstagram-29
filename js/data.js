@@ -61,4 +61,5 @@ const getPictures = () => Array.from(
   (_, pictureIndex) => createPicture(pictureIndex + 1),
 );
 
+// const getPictures = Array.from({length: ID_PHOTO}, createPicture);
 export {getPictures};
